@@ -1,38 +1,56 @@
 Telegram.WebApp.ready();
-let menuBtns = document.getElementById("main-sections");
-let faqPage = document.getElementById("faq-menu")
-let aboutPage = document.getElementById("abouts")
+const mainButton = window.Telegram.WebApp.MainButton;
+mainButton.text = "ПРОДОЛЖИТЬ";
+mainButton.enable();
+mainButton.show();
 
-let weare = document.getElementById("abouts")
+mainButton.onClick(function(){
+    var firstName = document.getElementById('first_name').value;
+    var lastName = document.getElementById('last_name').value;
+    var middleName = document.getElementById('middle_name').value;
 
-let BackButton = window.Telegram.WebApp.BackButton;
-BackButton.hide();
-
-function loadMenu() {
-    menuBtns.style.opacity = 0;
-    setTimeout(function() {
-        menuBtns.style.display = "none";
-      }, 500);
-    aboutPage.style.display = "block";
-    setTimeout(function() {
-        aboutPage.style.opacity = 1;
-      }, 10);
-    if (!BackButton.isVisible) {
-        BackButton.show();
+    let fio = {
+        name: firstName,
+        surname: lastName,
+        middleName: middleName
     }
-}
-
-BackButton.onClick(function() {
-    loadMain();
+    window.Telegram.WebApp.sendData(JSON.stringify(fio));
 })
 
-function setViewportData() {
-    $('.whoweare').attr('style', '' + (Telegram.WebApp.isExpanded ? 'opacity: 1;' : 'opacity: 0;'));
-    $('.hr-opacity').attr('style', '' + (Telegram.WebApp.isExpanded ? 'opacity: 1;' : 'opacity: 0;'));
-    $('.about-text-opacity').attr('style', '' + (Telegram.WebApp.isExpanded ? '-webkit-text-fill-color: #fff; margin-bottom: 20px; margin-top: 20px;' : '-webkit-text-fill-color: transparent; margin-bottom: 15px; margin-top: 15px;'));
-    $('.about-text').attr('style', '' + (Telegram.WebApp.isExpanded ? 'margin-bottom: 20px; margin-top: 20px;' : 'margin-bottom: 15px; margin-top: 15px;'));
-    // $('.whoweare').attr('style', '' + (Telegram.WebApp.isExpanded ? 'transition: visibility 1s, opacity 0.5s ease-out;' : 'transition: visibility 1s, opacity 0.5s ease-out;'));
-}
+// let BackButton = window.Telegram.WebApp.BackButton;
+// BackButton.hide();
 
-window.Telegram.WebApp.onEvent('viewportChanged', setViewportData);
-setViewportData();
+// function loadMenu() {
+//     menuBtns.style.opacity = 0;
+//     setTimeout(function() {
+//         menuBtns.style.display = "none";
+//       }, 500);
+//     aboutPage.style.display = "block";
+//     setTimeout(function() {
+//         aboutPage.style.opacity = 1;
+//       }, 10);
+//     if (!BackButton.isVisible) {
+//         BackButton.show();
+//     }
+// }
+
+// BackButton.onClick(function() {
+//     loadMain();
+// })
+
+// Telegram.WebApp.onEvent('mainButtonClicked', function(){
+//     tg.sendData("some string that we need to send");
+//     //при клике на основную кнопку отправляем данные в строковом виде
+//  });
+
+// // window.Telegram.WebApp.onEvent('viewportChanged', setViewportData);
+// // setViewportData();
+
+// function handleRegistration() {
+//     // Получение данных из формы
+
+//     // Вывод данных в консоль
+//     console.log('Имя:', firstName);
+//     console.log('Фамилия:', lastName);
+//     console.log('Отчество:', middleName);
+// }
