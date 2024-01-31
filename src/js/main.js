@@ -5,14 +5,14 @@ mainButton.enable();
 mainButton.show();
 
 mainButton.onClick(function(){
-    // var firstName = document.getElementById('first_name').value;
-    // var lastName = document.getElementById('last_name').value;
-    // var middleName = document.getElementById('middle_name').value;
+    var firstName = document.getElementById('first_name').value;
+    var lastName = document.getElementById('last_name').value;
+    var middleName = document.getElementById('middle_name').value;
 
-    // let fio = {
-    //     name: firstName,
-    //     surname: lastName,
-    //     middleName: middleName
-    // }
-    window.Telegram.WebApp.sendData("firstName");
+    let fio = {
+        name: firstName,
+        surname: lastName,
+        middleName: middleName
+    }
+    Telegram.WebApp.sendData(JSON.stringify(fio));
 });
