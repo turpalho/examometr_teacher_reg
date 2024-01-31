@@ -9,10 +9,10 @@ mainButton.onClick(function(){
     var lastName = document.getElementById('last_name').value;
     var middleName = document.getElementById('middle_name').value;
 
-    let fio = {
+    let fio = [{
         name: firstName,
         surname: lastName,
         middleName: middleName
-    }
+    }];
     Telegram.WebApp.sendData(JSON.stringify(fio));
 });
