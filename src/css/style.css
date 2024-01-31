@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "FuturaMD";
+    src: url("../fonts/futura_md.otf");
+}
+
+body {
+    background-color: var(--tg-theme-bg-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h2 {
+    color: var(--tg-theme-text-color);
+}
+
+.container {
+    margin-top: 60px;
+}
+
+.fio {
+    color: var(--tg-theme-hint-color);
+    font-size: x-large;
+}
+
+.reg_button {
+    color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-button-color);
+    height: 60px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+label.left {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+input.right {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+form {
+    margin: 20px;
+}
