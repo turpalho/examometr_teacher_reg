@@ -14,7 +14,7 @@ mainButton.onClick(function(){
         surname: lastName,
         middleName: middleName
     }
-    window.Telegram.WebApp.sendData(JSON.stringify(fio));
+    window.Telegram.WebApp.sendData(fio);
 })
 
 // let BackButton = window.Telegram.WebApp.BackButton;
@@ -46,11 +46,15 @@ mainButton.onClick(function(){
 // // window.Telegram.WebApp.onEvent('viewportChanged', setViewportData);
 // // setViewportData();
 
-// function handleRegistration() {
-//     // Получение данных из формы
+function handleRegistration() {
+    var firstName = document.getElementById('first_name').value;
+    var lastName = document.getElementById('last_name').value;
+    var middleName = document.getElementById('middle_name').value;
 
-//     // Вывод данных в консоль
-//     console.log('Имя:', firstName);
-//     console.log('Фамилия:', lastName);
-//     console.log('Отчество:', middleName);
-// }
+    let fio = {
+        name: firstName,
+        surname: lastName,
+        middleName: middleName
+    }
+    window.Telegram.WebApp.sendData(firstName);
+}
