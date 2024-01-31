@@ -32,19 +32,6 @@ h2 {
     font-size: 18px;
 }
 
-.reg_button {
-    display: block;
-    height: 60px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--tg-theme-button-color, #50a8eb);
-    color: var(--tg-theme-button-text-color, #ffffff);
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    padding: 12px 20px;
-}
-
 label.left {
     display: block;
     margin-bottom: 8px;
