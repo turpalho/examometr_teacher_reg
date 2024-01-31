@@ -22,17 +22,18 @@ h2 {
 
 .fio {
     color: var(--tg-theme-hint-color);
-    font-size: x-large;
+    font-size: 18px;
 }
 
 .reg_button {
     color: var(--tg-theme-button-text-color);
-    background-color: var(--tg-theme-button-color);
+    background-color: #000 var(--tg-theme-button-color);
     height: 60px;
     border-radius: 4px;
     font-size: 16px;
     margin-top: 20px;
     padding: 15px;
+    border: none;
 }
 
 label.left {
@@ -47,7 +48,7 @@ input.right {
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 form {
